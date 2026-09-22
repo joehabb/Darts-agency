@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darts | Our Work</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="papaya whip.png" alt="Darts"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="clients.html">Our Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <h1 class="page-title">Trusted by Brands that <span>Aim to Make an Impact</span></h1>
+
+        <!-- Category 1: Full Events -->
+        <h2 class="category-title">Full Events & Experiences</h2>
+        <div class="clients-grid">
+            <div class="client-box" onclick="openGallery('must')">
+                <img src="must/must-main.png" alt="MUST Event" style="background-color:#ffffff">
+                <div class="client-overlay">MUST</div>
+            </div>
+            <div class="client-box" onclick="openGallery('dorra')">
+                <img src="dorra/dorra-main.png" alt="Dorra Event" style="background-color:#ffffff">
+                <div class="client-overlay">Dorra Group</div>
+            </div>
+            <div class="client-box" onclick="openGallery('thevie')">
+                <img src="thevie/thevie-main.png" alt="The Vie Event" style="background-color:#ffffff">
+                <div class="client-overlay">The Vie</div>
+            </div>
+            
+        </div>
+
+        <!-- Category 2: Creative Giveaways -->
+        <h2 class="category-title">Creative Giveaways</h2>
+        <div class="clients-grid">
+            <div class="client-box" onclick="openGallery('cib')">
+                <img src="giveaways/cib-main.png" alt="CIB Wealth" style="background-color:#000000">
+                <div class="client-overlay">CIB Wealth</div>
+            </div>
+            <div class="client-box" onclick="openGallery('lg')">
+                <img src="lg/lg-main.png" alt="LG">
+                <div class="client-overlay">LG</div>
+            </div>
+            <div class="client-box" onclick="openGallery('aircairo')">
+                <img src="aircairo/aircairo-main.png" alt="Air Cairo">
+                <div class="client-overlay">Air Cairo</div>
+            </div>
+            <div class="client-box" onclick="openGallery('qnb')">
+                <img src="giveaways/qnb-main.png" alt="QNB"  style="background-color:#ffffff">
+                <div class="client-overlay">QNB</div>
+            </div>
+            <div class="client-box" onclick="openGallery('toshiba')">
+                <img src="giveaways/toshiba-main.png" alt="Toshiba" style="background-color: #E32726">
+                <div class="client-overlay">Toshiba</div>
+            </div>
+            <div class="client-box" onclick="openGallery('shell')">
+                <img src="giveaways/shell-main.png" alt="Shell" style="background-color:#ffffff">
+                <div class="client-overlay">Shell</div>
+            </div>
+        </div>
+
+        <!-- Category 3: Exhibition Booths -->
+        <h2 class="category-title">Exhibition Booths</h2>
+        <div class="clients-grid">
+            <div class="client-box" onclick="openGallery('abuauf')">
+                <img src="booths/abuauf-main.png" alt="Abu Auf Booth" style="background-color:#ffffff">
+                <div class="client-overlay">Abu Auf</div>
+            </div>
+            <div class="client-box" onclick="openGallery('axa')">
+                <img src="booths/axa-main.png" alt="AXA Booth" style="background-color: #000D8D " >
+                <div class="client-overlay">AXA</div>
+            </div>
+            <div class="client-box" onclick="openGallery('averroes')">
+                <img src="booths/averroes-main.png" alt="Averroes Pharma" style="background-color:#ffffff">
+                <div class="client-overlay">Averroes Pharma</div>
+            </div>
+            <div class="client-box" onclick="openGallery('modernplast')">
+                <img src="booths/mpg-main.jpg" alt="Modern Plast" style="background-color:#ffffff">
+                <div class="client-overlay">Modern Plast Group</div>
+            </div>
+            <div class="client-box" onclick="openGallery('voom')">
+                <img src="booths/voom-main.jpg" alt="Voom">
+                <div class="client-overlay">Voom</div>
+            </div>
+            <div class="client-box" onclick="openGallery('raedal-asfar')">
+                <img src="raedal-asfar/raedal-asfar-main.png" alt="Raed Al-Asfar">
+                <div class="client-overlay">Raed Al-Asfar</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EL POPUP BTA3 EL GALLERY -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" class="modal-title">Client Name</h2>
+            <div id="modalGallery"></div> <!-- SHELNA EL CLASS HENA 3ashan el JS by7oto -->
+        </div>
+    </div>
+
+    <!-- EL POPUP EL GDED BTA3 EL SORA EL FULLSCREEN -->
+    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <span class="fullscreen-close">&times;</span>
+        <img id="fullscreenImg" src="" alt="Fullscreen Image" onclick="event.stopPropagation();">
+    </div>
+
+    <footer>&copy; 2026 Darts Agency. All rights reserved.</footer>
+
+    <!-- JavaScript -->
+    <script>
+        const portfolioData = {
+        'must': {
+        title: 'MUST Events',
+        sections: {
+        'Winter Festival': ['must/Must1.png', 'must/Must2.png', 'must/Must3.png','must/Must4.png', 'must/Must5.png', 'must/Must6.png'],
+        'Photoday': ['must/Must7.png', 'must/Must8.png','must/Must9.png', 'must2/Must10.png', 'must2/Must11.png','must2/Must12.png', 'must2/Must13.png', 'must2/Must14.png', 'must2/Must15.png', 'must2/Must16.png', 'must2/Must17.png']
+        }
+        },
+        'dorra': { 
+       title: 'Dorra Group', 
+       sections: {
+        'Village West': ['dorra/Village West/vw1.png', 'dorra/Village West/vw2.png','dorra/Village West/vw3.png', 'dorra/Village West/vw4.png','dorra/Village West/vw5.png'],
+        'Address East': ['dorra/cairo-1.png', 'dorra/cairo-2.png']
+    }
+},
+        'thevie': { title: 'The Vie - Anniversary Event', images: ['thevie/thevie1.png', 'thevie/thevie2.png', 'thevie/thevie3.png', 'thevie/thevie4.png'] },
+        'cib': { title: 'CIB Wealth - Giveaways', images: ['giveaways/cib.jpeg', 'giveaways/cib2.jpeg'] },
+        'lg': { title: 'LG - Summer Giveaways', images: ['lg/lg-1.png', 'lg/lg-2.png'] },
+        'aircairo': { title: 'Air Cairo - Giveaways', images: ['aircairo/aircairo-1.png'] },
+        'qnb': { title: 'QNB - Giveaways', images: ['giveaways/qnb1.png'] },
+        'toshiba': { title: 'Toshiba - Giveaways', images: ['giveaways/toshiba1.png'] },
+        'shell': { title: 'Shell - Giveaways', images: ['giveaways/shell1.png'] },
+
+        'abuauf': { title: 'Abu Auf - Exhibition Booth', images: ['booths2/abuauf1.png', 'booths2/abuauf2.png'] },
+        'axa': { title: 'AXA - Booth Activation', images: ['booths/axa1.png'] },
+        'averroes': { title: 'Averroes Pharma - Booth', images: ['booths2/averroes1.png','booths2/averroes2.png','booths2/averroes3.png'] },
+        'modernplast': { title: 'Modern Plast Group - Booth', images: ['booths/mpg1.png'] },
+        'voom': { title: 'Voom - Interactive Booth', images: ['booths/voom1.png'] },
+        'raedal-asfar': { title: 'Raed Al-Asfar - Exhibition Booth', images: ['booths/raedelasfar1.jpg','booths/raedelasfar2.jpg'] }
+        };
+
+        function openGallery(clientId) {
+        const data = portfolioData[clientId];
+        if (!data) return;
+
+        document.getElementById('modalTitle').innerText = data.title;
+        const gallery = document.getElementById('modalGallery');
+        gallery.innerHTML = '';
+
+        // Law el client 3ando Aqsamm (Sections) zay MUST
+        if (data.sections) {
+        for (const sectionName in data.sections) {
+        const sectionTitle = document.createElement('h3');
+        sectionTitle.className = 'gallery-section-title';
+        sectionTitle.innerText = sectionName;
+        gallery.appendChild(sectionTitle);
+
+        const sectionGrid = document.createElement('div');
+        sectionGrid.className = 'gallery-grid';
+
+        data.sections[sectionName].forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = sectionName;
+        img.onclick = function() { openFullscreen(this.src); };
+        sectionGrid.appendChild(img);
+        });
+
+        gallery.appendChild(sectionGrid);
+        }
+        }
+        // Law el client 3ady 3ando sowar 3ala ba3d
+        else if (data.images) {
+        const mainGrid = document.createElement('div');
+        mainGrid.className = 'gallery-grid';
+
+        data.images.forEach(imageSrc => {
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = data.title;
+        img.onclick = function() { openFullscreen(this.src); };
+        mainGrid.appendChild(img);
+        });
+
+        gallery.appendChild(mainGrid);
+        }
+
+        document.getElementById('portfolioModal').style.display = 'block';
+        }
+
+        function closeModal() {
+        document.getElementById('portfolioModal').style.display = 'none';
+        }
+
+        function openFullscreen(src) {
+        document.getElementById('fullscreenImg').src = src;
+        document.getElementById('fullscreenModal').style.display = 'block';
+        }
+
+        function closeFullscreen() {
+        document.getElementById('fullscreenModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+        const modal = document.getElementById('portfolioModal');
+        if (event.target == modal) {
+        closeModal();
+        }
+        }
+    </script>
+</body>
+</html>
